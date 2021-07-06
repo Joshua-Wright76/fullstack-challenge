@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Oncora Full-Stack Challenge API
+  version: 0.0.1
+
+servers:
+  - url: http://localhost:8000
+    description: local dev
+
+paths:
+  /api/patients:
+    get:
+      responses:
+        '200':
+          description: Success - list of patients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patient'
+        '500':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
+
+components:
+  schemas:
+    Patient:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        mrn:
+          type: string
+          description: The patient's Medical Record Number
+        name:
+          type: string
+        dob:
+          type: string
+          description: The patient's date of birth as an ISO 8601 string
+        starred:
+          type: boolean
+          description: Whether the patient is starred or not

@@ -1,0 +1,22 @@
+{
+    "files.exclude": {
+        ".idea": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "backend/node_modules": true,
+        "frontend/node_modules": true,
+    },
+
+    "[typescript]": {
+        "editor.formatOnSave": true,
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true,
+    },
+    "[css]": {
+        "editor.formatOnSave": true,
+    },
+}
